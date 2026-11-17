@@ -5,6 +5,7 @@ __pycache__
 .ruff_cache
 *.log
 training
+web-demo
 tests
 pricing
 docs/*

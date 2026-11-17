@@ -1,0 +1,84 @@
+{
+  "model": "damage-n + parts-s",
+  "runtime": "Python ONNX Runtime CPU reference",
+  "image": "docs/sample.jpg",
+  "confidence": 0.25,
+  "damages": [
+    {
+      "damage": "Broken part",
+      "name": "Pieza rota",
+      "confidence": 0.6291,
+      "box": [
+        53.6,
+        253.7,
+        692.4,
+        483.4
+      ],
+      "part": "Paragolpes delantero",
+      "part_class": "Front-bumper",
+      "part_overlap": 0.89,
+      "severity": 3,
+      "area_fraction": 0.9146,
+      "repair": "Pieza rota",
+      "repair_part": "Paragolpes",
+      "severity_method": "Heur\u00edstica por \u00e1rea segmentada; no mide profundidad ni da\u00f1o interno."
+    },
+    {
+      "damage": "Missing part",
+      "name": "Pieza ausente",
+      "confidence": 0.3167,
+      "box": [
+        202.9,
+        438.3,
+        526.1,
+        476.7
+      ],
+      "part": "Paragolpes delantero",
+      "part_class": "Front-bumper",
+      "part_overlap": 1.0,
+      "severity": 2,
+      "area_fraction": 0.1195,
+      "repair": "Pieza ausente",
+      "repair_part": "Paragolpes",
+      "severity_method": "Heur\u00edstica por \u00e1rea segmentada; no mide profundidad ni da\u00f1o interno."
+    },
+    {
+      "damage": "Broken part",
+      "name": "Pieza rota",
+      "confidence": 0.3071,
+      "box": [
+        520.5,
+        239.2,
+        663.6,
+        367.0
+      ],
+      "part": "Faro delantero",
+      "part_class": "Headlight",
+      "part_overlap": 0.889,
+      "severity": 3,
+      "area_fraction": 1.0,
+      "repair": "Pieza rota",
+      "repair_part": "Faro",
+      "severity_method": "Heur\u00edstica por \u00e1rea segmentada; no mide profundidad ni da\u00f1o interno."
+    },
+    {
+      "damage": "Broken part",
+      "name": "Pieza rota",
+      "confidence": 0.2871,
+      "box": [
+        134.7,
+        126.3,
+        655.9,
+        282.3
+      ],
+      "part": "Cap\u00f3",
+      "part_class": "Hood",
+      "part_overlap": 0.886,
+      "severity": 3,
+      "area_fraction": 0.9674,
+      "repair": "Pieza rota",
+      "repair_part": "Cap\u00f3",
+      "severity_method": "Heur\u00edstica por \u00e1rea segmentada; no mide profundidad ni da\u00f1o interno."
+    }
+  ]
+}

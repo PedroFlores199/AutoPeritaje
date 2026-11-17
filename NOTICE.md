@@ -7,3 +7,5 @@ Fotografías y anotaciones de ejemplo: [DrBimmer/car-parts-and-damage-dataset](h
 La demo incluye opcionalmente TallerMLOps, de Pedro Flores, bajo MIT. Se descarga su revisión `51320c0ed1ebfb206b8999d7bbd79aa548c1c02b`, verificando SHA-256 antes de extraerla; conserva su LICENSE y NOTICE.md. Su modelo de reparación se entrenó con órdenes sintéticas. No constituye una tarifa comercial.
 
 ONNX Runtime, FastAPI, NumPy, Pillow, OpenCV, ReportLab y las demás dependencias conservan sus respectivas licencias. Los pesos publicados en la release models-v1 se verifican contra models/manifest.json y se ejecutan con ONNX Runtime en CPU; no se requiere PyTorch para servir las fotografías.
+
+La variante estática en web-demo utiliza ONNX Runtime Web 1.31.1 y jsPDF 4.2.1 bajo MIT, con integridad de npm y huellas registradas en web-demo/vendor/manifest.json. DejaVu Sans conserva su licencia. El modelo LightGBM exportado mantiene la procedencia y licencia MIT de TallerMLOps.

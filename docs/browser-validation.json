@@ -1,0 +1,98 @@
+{
+  "environment": "Local static HTTP server, browser WebAssembly CPU",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/"
+    },
+    {
+      "method": "GET",
+      "path": "/vendor/ort.wasm.min.js"
+    },
+    {
+      "method": "GET",
+      "path": "/app.css?v=1.0.0"
+    },
+    {
+      "method": "GET",
+      "path": "/app.mjs"
+    },
+    {
+      "method": "GET",
+      "path": "/vendor/jspdf.umd.min.js"
+    },
+    {
+      "method": "GET",
+      "path": "/inference.mjs"
+    },
+    {
+      "method": "GET",
+      "path": "/core.mjs"
+    },
+    {
+      "method": "GET",
+      "path": "/report.mjs"
+    },
+    {
+      "method": "GET",
+      "path": "/ui.mjs"
+    },
+    {
+      "method": "GET",
+      "path": "/catalog.json"
+    },
+    {
+      "method": "GET",
+      "path": "/config.json"
+    },
+    {
+      "method": "GET",
+      "path": "/pricing.json"
+    },
+    {
+      "method": "GET",
+      "path": "/favicon.ico"
+    },
+    {
+      "method": "GET",
+      "path": "/sample.jpg"
+    },
+    {
+      "method": "GET",
+      "path": "/models/damage-n.onnx"
+    },
+    {
+      "method": "GET",
+      "path": "/vendor/ort-wasm-simd-threaded.mjs"
+    },
+    {
+      "method": "GET",
+      "path": "/vendor/ort-wasm-simd-threaded.wasm"
+    },
+    {
+      "method": "GET",
+      "path": "/models/parts.onnx"
+    },
+    {
+      "method": "GET",
+      "path": "/DejaVuSans.ttf"
+    }
+  ],
+  "non_get_requests": 0,
+  "photo_upload_requests": 0,
+  "architecture": "No upload or remote inference route exists; code uses selected File objects locally. Models and static assets are fetched from the static origin.",
+  "browser_tests": {
+    "sample_first_total_seconds": 2.2,
+    "sample_first_inference_and_masks_ms": 1330,
+    "multiple_photos": 2,
+    "multiple_total_seconds": 2.7,
+    "multiple_pdf_pages": 2,
+    "blank_photo_detections": 0,
+    "blank_photo_prices": 0,
+    "corrupt_file_rejected": true,
+    "sample_warm_total_seconds": 1.4,
+    "sample_async_load_button_protected": true
+  },
+  "pricing_parity_reference_cases": 120,
+  "javascript_unit_tests_passed": 4
+}

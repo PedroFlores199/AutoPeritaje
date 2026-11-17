@@ -4,9 +4,9 @@ Una foto de un coche, sus daños visibles sobre la imagen y un informe PDF. Dos 
 
 **Demo en Hugging Face: despliegue en preparación.** · [Resultados y errores](docs/evaluation.md) · [Arquitectura](#cómo-está-organizado)
 
-![Análisis real de una fotografía pública](docs/demo.gif)
+![Análisis real en el navegador de una fotografía pública](docs/demo.gif)
 
-**Estado del modelo:** prototipo experimental. La segmentación de daños obtiene **9,20 % de mAP50 de máscaras** en prueba interna; el modelo de piezas obtiene **86,25 %**, medido por separado. La demo permite estudiar el flujo completo, pero omite muchos daños y produce propuestas incorrectas. Una fotografía sin detecciones no acredita que el coche esté bien.
+**Estado del modelo:** prototipo experimental. El experto s de la API obtiene **9,20 % de mAP50 de máscaras** en prueba interna y el n de la demo web, **9,85 %**. El experto de piezas obtiene **86,25 %**, medido por separado. La demo permite estudiar el flujo completo, pero omite muchos daños y produce propuestas incorrectas. Una fotografía sin detecciones no acredita que el coche esté bien.
 
 ## Qué puedes probar en un minuto
 
@@ -16,6 +16,8 @@ Una foto de un coche, sus daños visibles sobre la imagen y un informe PDF. Dos 
 4. Consulta las partidas orientativas y descarga el PDF. No se suman automáticamente: varios daños de una pieza pueden compartir reparación.
 
 La foto de ejemplo y las capturas proceden del dataset público, no de archivos personales. La demo no necesita claves ni servicios de pago.
+
+La versión web gratuita procesa las fotos dentro del navegador: YOLO11n para daños, YOLO11s para piezas, presupuesto LightGBM de TallerMLOps y PDF local. La API conserva el experto s de daños. [Funcionamiento y comprobaciones de la versión estática](web-demo/README.md).
 
 ## Arranque local
 
@@ -62,6 +64,7 @@ flowchart LR
 | `models/` | Manifiesto y huellas de los pesos; los binarios se distribuyen en [models-v1](https://github.com/PedroFlores199/AutoPeritaje/releases/tag/models-v1). |
 | `scripts/` | Descarga y comprobación de modelos y de TallerMLOps. |
 | `tests/` | Geometría, archivos, límites, caducidad, informes e integración con los modelos reales. |
+| `web-demo/` | Variante estática: inferencia WebAssembly, modelo de presupuesto y PDF, sin subir las fotos a una API. |
 | `docs/` | Métricas por clase, matriz de confusión, ejemplos de errores y capturas. |
 
 ## Comparación medida
@@ -102,5 +105,7 @@ uv run pytest -q
 ```
 
 Doce pruebas pasan con los modelos reales descargados. Sin los pesos, las pruebas de integración se marcan como omitidas. GitHub Actions ejecuta las comprobaciones y la construcción de la imagen. Para reproducir entrenamiento y evaluación: [guía](training/README.md). La matriz de confusión y los ejemplos incluyen resultados fallidos, con sus identificadores y criterio de selección.
+
+La versión web añade cuatro pruebas de JavaScript, con paridad de 120 predicciones del modelo de presupuesto y máscaras de referencia de OpenCV. Se ha probado en el navegador con la foto pública, varias imágenes, una imagen vacía, un archivo dañado e informes de una y dos páginas. [Comprobaciones](docs/browser-validation.json) e [informe web](docs/example-web-report.pdf). La primera prueba local con los modelos y el informe completos tardó 2,2 s; no representa la descarga inicial desde Internet ni el rendimiento de otros dispositivos.
 
 Código y pesos derivados de YOLO bajo **AGPL-3.0**. Datos, fuentes y dependencias: [NOTICE.md](NOTICE.md).

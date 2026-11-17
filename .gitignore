@@ -8,6 +8,7 @@ models/*.pt
 runs/
 artifacts/
 pricing/
+web-demo/models/
 *.log
 .env.*
 !.env.example

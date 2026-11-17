@@ -16,6 +16,7 @@ jobs:
       - run: uv sync --extra test --frozen
       - run: uv run python scripts/download_models.py
       - run: uv run pytest -q --junitxml=test-results.xml
+      - run: node --test web-demo/tests/*.test.mjs
       - run: docker build --target space -t autoperitaje:ci .
       - uses: actions/upload-artifact@v4
         if: always()
