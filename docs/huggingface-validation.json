@@ -1,0 +1,246 @@
+{
+  "date": "2026-11-17",
+  "space_url": "https://huggingface.co/spaces/LaskyOp/AutoPeritaje",
+  "app_url": "https://laskyop-autoperitaje.static.hf.space/index.html",
+  "space_commit": "b396b5b2cff24618c1852a46ceaa622f99decc70",
+  "public": true,
+  "sdk": "static",
+  "runtime": "RUNNING",
+  "server_compute": false,
+  "paid_build_command": false,
+  "hosting_transforms": "Hugging Face renders Markdown and adds Space metadata to served HTML. Original Markdown and HTML are verified through public resolve URLs; executable assets and models are verified at the static app origin.",
+  "source_commit": "c8f019a7a55ae271ab4c7ce5e466149e61ca06b4",
+  "public_files_verified": [
+    {
+      "path": "DejaVuSans.ttf",
+      "bytes": 756072,
+      "sha256": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22",
+      "matches": true,
+      "content_type": "font/ttf",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/DejaVuSans.ttf"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 34020,
+      "sha256": "d8a6cc31abc16b6748c7a21f21611f5a1ec33f67d22ca23d7da1c19b95496bee",
+      "matches": true,
+      "content_type": null,
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/LICENSE"
+    },
+    {
+      "path": "LICENSE_DEJAVU",
+      "bytes": 4816,
+      "sha256": "d75938dec098f06f0ac3c00853065d94f020be1c3c62ef1dc2975ba15b4d9b0e",
+      "matches": true,
+      "content_type": null,
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/LICENSE_DEJAVU"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 1591,
+      "sha256": "f58bee0f357f6c104eaee44ef6431c31a4e1cff321caa4a082143b809ad219dd",
+      "matches": true,
+      "content_type": "text/plain; charset=utf-8",
+      "verified_url": "https://huggingface.co/spaces/LaskyOp/AutoPeritaje/resolve/main/NOTICE.md"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1637,
+      "sha256": "8abfa719df0897da8e2aec7e5a773603937cfc6d4581055357c58c79c8bd53db",
+      "matches": true,
+      "content_type": "text/plain; charset=utf-8",
+      "verified_url": "https://huggingface.co/spaces/LaskyOp/AutoPeritaje/resolve/main/README.md"
+    },
+    {
+      "path": "app.css",
+      "bytes": 15336,
+      "sha256": "6a99422e062915f323917f1cc43f801923ba5a8b4d905da44dc9e9447370f295",
+      "matches": true,
+      "content_type": "text/css; charset=utf-8",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/app.css"
+    },
+    {
+      "path": "app.mjs",
+      "bytes": 7246,
+      "sha256": "3c01e234f9834dad61abb9957199f73e79152672513fe9d7bb046008f5560228",
+      "matches": true,
+      "content_type": "application/javascript; charset=utf-8",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/app.mjs"
+    },
+    {
+      "path": "catalog.json",
+      "bytes": 745,
+      "sha256": "d96f30bf7a143535057bda5bdd473e24bd25238a150ab4b2958927285872ec67",
+      "matches": true,
+      "content_type": "application/json; charset=utf-8",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/catalog.json"
+    },
+    {
+      "path": "config.json",
+      "bytes": 4381,
+      "sha256": "aa847561045ddbd68baa6d27da92161f978af42ec2b4e19a1662dfbf8ff6db57",
+      "matches": true,
+      "content_type": "application/json; charset=utf-8",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/config.json"
+    },
+    {
+      "path": "core.mjs",
+      "bytes": 7398,
+      "sha256": "438af0580d1ec42c29993236c6fa0f755ade74cd2477826a176f52897f37b5a9",
+      "matches": true,
+      "content_type": "application/javascript; charset=utf-8",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/core.mjs"
+    },
+    {
+      "path": "damage-n.onnx",
+      "bytes": 11649772,
+      "sha256": "b89b79b87d8686de50be3ff6273f0c2ba426f5aa2659cc66c5a4a6ce1496c193",
+      "matches": true,
+      "content_type": "application/octet-stream",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/damage-n.onnx"
+    },
+    {
+      "path": "favicon.svg",
+      "bytes": 265,
+      "sha256": "535251d6dabfdd76ff785ea78e989f4633d299dbd55d59b089460614a6d4be6c",
+      "matches": true,
+      "content_type": "image/svg+xml",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/favicon.svg"
+    },
+    {
+      "path": "index.html",
+      "bytes": 13439,
+      "sha256": "c05293e9c9b94db00d860fb464cc3b808362cc57f89a8187db016014d7703e9c",
+      "matches": true,
+      "content_type": "text/plain; charset=utf-8",
+      "verified_url": "https://huggingface.co/spaces/LaskyOp/AutoPeritaje/resolve/main/index.html"
+    },
+    {
+      "path": "inference.mjs",
+      "bytes": 10784,
+      "sha256": "16fc27961d4961fa3c88ff2b584f2eab930a3fa23c552815e913f46263f9c631",
+      "matches": true,
+      "content_type": "application/javascript; charset=utf-8",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/inference.mjs"
+    },
+    {
+      "path": "jspdf-LICENSE.txt",
+      "bytes": 1142,
+      "sha256": "dc388ec35ff463288cdde3588a36fd4ed12a45deff053243b37309acc9ef583b",
+      "matches": true,
+      "content_type": "text/plain; charset=utf-8",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/jspdf-LICENSE.txt"
+    },
+    {
+      "path": "jspdf.umd.min.js",
+      "bytes": 420165,
+      "sha256": "e6551fcdc32f09d6853b2c5126d18d01d9447e0da618a41a11ebeee0f6c20d54",
+      "matches": true,
+      "content_type": "application/javascript; charset=utf-8",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/jspdf.umd.min.js"
+    },
+    {
+      "path": "onnxruntime-web-LICENSE.txt",
+      "bytes": 1073,
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c",
+      "matches": true,
+      "content_type": "text/plain; charset=utf-8",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/onnxruntime-web-LICENSE.txt"
+    },
+    {
+      "path": "ort-wasm-simd-threaded.mjs",
+      "bytes": 24738,
+      "sha256": "30ed0b5cd1182ede931fea448afb567d4dc705ec957af09f108a2be5f770dac3",
+      "matches": true,
+      "content_type": "application/javascript; charset=utf-8",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/ort-wasm-simd-threaded.mjs"
+    },
+    {
+      "path": "ort-wasm-simd-threaded.wasm",
+      "bytes": 14848852,
+      "sha256": "4b884c203b0fa48d057be3332c65513ff85aa3c5bddd6946acc0fab7ecda001d",
+      "matches": true,
+      "content_type": "application/wasm",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/ort-wasm-simd-threaded.wasm"
+    },
+    {
+      "path": "ort.wasm.min.js",
+      "bytes": 53796,
+      "sha256": "b8a78c408c40da65fdc8ba0846f7b2948e92a4c6d6b23cc8e4165e428ad95443",
+      "matches": true,
+      "content_type": "application/javascript; charset=utf-8",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/ort.wasm.min.js"
+    },
+    {
+      "path": "parts.onnx",
+      "bytes": 40557757,
+      "sha256": "0cb747268f361772d872edfda36c74c8f7894585d70c3d5fc6bb61e86863a428",
+      "matches": true,
+      "content_type": "application/octet-stream",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/parts.onnx"
+    },
+    {
+      "path": "pricing.json",
+      "bytes": 1378823,
+      "sha256": "ff481bd50be7b1e8d7b15414062c8f42c56dde7700356eed983e69b0727d9a1d",
+      "matches": true,
+      "content_type": "application/json; charset=utf-8",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/pricing.json"
+    },
+    {
+      "path": "report.mjs",
+      "bytes": 5194,
+      "sha256": "2077e3174d7de97c4423f541d20b1677d58aff6fd9cb6163a1c296300fcfff10",
+      "matches": true,
+      "content_type": "application/javascript; charset=utf-8",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/report.mjs"
+    },
+    {
+      "path": "sample.jpg",
+      "bytes": 81438,
+      "sha256": "2e93717243c9963f6c09bf20744ffee22db5dbcd9056da2621ece34b233c800c",
+      "matches": true,
+      "content_type": "image/jpeg",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/sample.jpg"
+    },
+    {
+      "path": "ui.mjs",
+      "bytes": 4045,
+      "sha256": "d2b24454723f62bff8c69b43a6b4211dfb3e12a37272bf9fdf6aa73add51c7ef",
+      "matches": true,
+      "content_type": "application/javascript; charset=utf-8",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/ui.mjs"
+    },
+    {
+      "path": "vendor-manifest.json",
+      "bytes": 1221,
+      "sha256": "5dab7e81acf2d08b9512e3d1a1c3295697f4f7b85d9b0a74a9bf0c81126b3dcc",
+      "matches": true,
+      "content_type": "application/json; charset=utf-8",
+      "verified_url": "https://laskyop-autoperitaje.static.hf.space/vendor-manifest.json"
+    }
+  ],
+  "browser_tests": {
+    "signed_in": false,
+    "public_sample_first_total_seconds": 13.5,
+    "public_sample_inference_and_masks_ms": 1303,
+    "file_picker_sample_total_seconds": 11.3,
+    "file_picker_sample_inference_and_masks_ms": 1285,
+    "warm_total_seconds": 1.4,
+    "warm_inference_and_masks_ms": 1308,
+    "sample_detections": 4,
+    "sample_price_lines": 4,
+    "pdf_downloaded": true,
+    "pdf_pages": 1,
+    "pdf_sample_amounts_eur": [
+      444.75,
+      496.61,
+      491.98,
+      471.59
+    ]
+  },
+  "privacy": "No photo upload or inference endpoint. Browser computes selected File inputs, models, pricing and PDF locally. Static host receives ordinary asset requests.",
+  "limitations": "Development prototype with weak damage segmentation. Timings observed on the development Mac; not a performance guarantee. Prices derive from synthetic repair orders.",
+  "screenshot": "huggingface.jpg",
+  "example_pdf": "example-huggingface-report.pdf"
+}

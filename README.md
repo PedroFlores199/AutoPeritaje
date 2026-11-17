@@ -2,7 +2,7 @@
 
 Una foto de un coche, sus daños visibles sobre la imagen y un informe PDF. Dos modelos YOLO separan daños y piezas; ONNX ejecuta el análisis en CPU y TallerMLOps aporta estimaciones orientativas con datos sintéticos.
 
-**Demo en Hugging Face: despliegue en preparación.** · [Resultados y errores](docs/evaluation.md) · [Arquitectura](#cómo-está-organizado)
+**[Abrir demo gratuita en Hugging Face](https://huggingface.co/spaces/LaskyOp/AutoPeritaje)** · [Pantalla completa](https://laskyop-autoperitaje.static.hf.space/index.html) · [Resultados y errores](docs/evaluation.md) · [Arquitectura](#cómo-está-organizado)
 
 ![Análisis real en el navegador de una fotografía pública](docs/demo.gif)
 
@@ -39,7 +39,7 @@ uv run python scripts/download_models.py
 uv run uvicorn peritaje.main:app --host 127.0.0.1 --port 5106 --no-access-log
 ```
 
-En este modo, TallerMLOps se consulta en `http://localhost:5105`. Si no está disponible, el análisis y el PDF siguen funcionando; las partidas sin estimar se indican expresamente. El contenedor y Hugging Face incluyen la revisión verificada del servicio y lo llaman mediante su API ASGI, dentro del mismo proceso.
+En este modo, TallerMLOps se consulta en `http://localhost:5105`. Si no está disponible, el análisis y el PDF siguen funcionando; las partidas sin estimar se indican expresamente. El contenedor incluye la revisión verificada del servicio y lo llama mediante su API ASGI, dentro del mismo proceso. La demo estática de Hugging Face ejecuta los árboles exportados de ese mismo modelo en JavaScript, con paridad comprobada.
 
 ## Cómo está organizado
 
@@ -106,6 +106,10 @@ uv run pytest -q
 
 Doce pruebas pasan con los modelos reales descargados. Sin los pesos, las pruebas de integración se marcan como omitidas. GitHub Actions ejecuta las comprobaciones y la construcción de la imagen. Para reproducir entrenamiento y evaluación: [guía](training/README.md). La matriz de confusión y los ejemplos incluyen resultados fallidos, con sus identificadores y criterio de selección.
 
-La versión web añade cuatro pruebas de JavaScript, con paridad de 120 predicciones del modelo de presupuesto y máscaras de referencia de OpenCV. Se ha probado en el navegador con la foto pública, varias imágenes, una imagen vacía, un archivo dañado e informes de una y dos páginas. [Comprobaciones](docs/browser-validation.json) e [informe web](docs/example-web-report.pdf). La primera prueba local con los modelos y el informe completos tardó 2,2 s; no representa la descarga inicial desde Internet ni el rendimiento de otros dispositivos.
+La versión web añade cuatro pruebas de JavaScript, con paridad de 120 predicciones del modelo de presupuesto y máscaras de referencia de OpenCV. Se ha probado en el navegador con la foto pública, varias imágenes, una imagen vacía, un archivo dañado e informes de una y dos páginas. [Comprobaciones](docs/browser-validation.json) e [informe web](docs/example-web-report.pdf). La primera prueba local con los modelos y el informe completos tardó 2,2 s. La primera ejecución pública desde Hugging Face, incluida la descarga inicial, tardó 13,5 s en este Mac. Son observaciones del dispositivo, no garantías para otros equipos. [Prueba pública y despliegue sin servicios de pago](docs/huggingface-validation.json).
+
+![Demo pública gratuita de AutoPeritaje](docs/huggingface.jpg)
+
+El Space sirve archivos estáticos preparados localmente; no utiliza compilación remota, GPU, claves ni un servidor de inferencia. [Preparación reproducible](deployment/huggingface/DEPLOYMENT.md).
 
 Código y pesos derivados de YOLO bajo **AGPL-3.0**. Datos, fuentes y dependencias: [NOTICE.md](NOTICE.md).

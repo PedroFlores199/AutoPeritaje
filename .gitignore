@@ -27,3 +27,6 @@ service-account.json
 *.tfvars
 !*.tfvars.example
 crash.log
+
+deployment/huggingface/dist/
+deployment/huggingface/static/
