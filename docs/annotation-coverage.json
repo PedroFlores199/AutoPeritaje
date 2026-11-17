@@ -1,0 +1,54 @@
+{
+  "method": "Preserve global SHA256 splits; include an image only in tasks for which it has annotations. Images annotated only for parts are not damage negatives. Folder names are not trusted: coverage is inferred from actual classTitle values.",
+  "tasks": {
+    "damage": {
+      "splits": {
+        "train": 604,
+        "val": 98,
+        "test": 112
+      },
+      "instances": {
+        "Dent": 1664,
+        "Scratch": 3242,
+        "Broken part": 1500,
+        "Corrosion": 277,
+        "Paint chip": 1356,
+        "Missing part": 632,
+        "Flaking": 337,
+        "Cracked": 76
+      },
+      "known_clean_negative_images": 0
+    },
+    "parts": {
+      "splits": {
+        "train": 743,
+        "val": 122,
+        "test": 133
+      },
+      "instances": {
+        "Hood": 712,
+        "Trunk": 416,
+        "Front-door": 917,
+        "Back-door": 721,
+        "Fender": 935,
+        "Quarter-panel": 855,
+        "Rocker-panel": 860,
+        "Roof": 793,
+        "Windshield": 632,
+        "Back-windshield": 271,
+        "Front-window": 951,
+        "Back-window": 1237,
+        "Headlight": 914,
+        "Tail-light": 721,
+        "Mirror": 987,
+        "Front-wheel": 885,
+        "Back-wheel": 865,
+        "Front-bumper": 705,
+        "Back-bumper": 443,
+        "Grille": 577,
+        "License-plate": 370
+      },
+      "known_clean_negative_images": 0
+    }
+  }
+}

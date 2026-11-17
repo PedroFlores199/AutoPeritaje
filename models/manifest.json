@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "selection": "YOLO11s selected using validation only: mask mAP50 n=0.126329, s=0.144892; internal test is not an external assessment.",
+  "damage": {
+    "file": "damage-s.onnx",
+    "sha256": "720514a2e06cdb9bbad94c6e3fc8973299387774218028e507417f3cdd49406d",
+    "bytes": 40524883,
+    "input_size": 640,
+    "classes": {
+      "0": "Dent",
+      "1": "Scratch",
+      "2": "Broken part",
+      "3": "Missing part",
+      "4": "Paint chip",
+      "5": "Corrosion",
+      "6": "Cracked",
+      "7": "Flaking"
+    },
+    "runtime": "1.32.0",
+    "threads": 2,
+    "cpu_forward_ms": {
+      "median": 216.08,
+      "p95": 221.37,
+      "runs": 12,
+      "warmup": 3
+    },
+    "metadata_redaction": "Local training paths removed; inference parameters and tensors unchanged."
+  },
+  "parts": {
+    "file": "parts.onnx",
+    "sha256": "0cb747268f361772d872edfda36c74c8f7894585d70c3d5fc6bb61e86863a428",
+    "bytes": 40557757,
+    "input_size": 640,
+    "classes": {
+      "0": "Dent",
+      "1": "Scratch",
+      "2": "Broken part",
+      "3": "Missing part",
+      "4": "Paint chip",
+      "5": "Corrosion",
+      "6": "Cracked",
+      "7": "Flaking",
+      "8": "Front-bumper",
+      "9": "Back-bumper",
+      "10": "Hood",
+      "11": "Trunk",
+      "12": "Front-door",
+      "13": "Back-door",
+      "14": "Fender",
+      "15": "Quarter-panel",
+      "16": "Rocker-panel",
+      "17": "Roof",
+      "18": "Windshield",
+      "19": "Back-windshield",
+      "20": "Front-window",
+      "21": "Back-window",
+      "22": "Headlight",
+      "23": "Tail-light",
+      "24": "Mirror",
+      "25": "Front-wheel",
+      "26": "Back-wheel",
+      "27": "Grille",
+      "28": "License-plate"
+    },
+    "runtime": "1.32.0",
+    "threads": 2,
+    "cpu_forward_ms": {
+      "median": 226.6,
+      "p95": 257.74,
+      "runs": 12,
+      "warmup": 3
+    },
+    "metadata_redaction": "Local training paths removed; inference parameters and tensors unchanged."
+  },
+  "source_dataset_revision": "2dbf46f7e23eb0d6f551d38e4f77a11fe9d045b9"
+}

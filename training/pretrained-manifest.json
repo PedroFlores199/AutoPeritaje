@@ -1,0 +1,14 @@
+[
+  {
+    "file": "yolo11n-seg.pt",
+    "sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+    "bytes": 6182636,
+    "url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo11n-seg.pt"
+  },
+  {
+    "file": "yolo11s-seg.pt",
+    "sha256": "1caa81c0195412efa411b632bcfb8c184939dddb6ae41f6a80c41b211ff257c3",
+    "bytes": 20669228,
+    "url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo11s-seg.pt"
+  }
+]

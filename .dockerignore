@@ -1,0 +1,15 @@
+.git
+.venv
+__pycache__
+.pytest_cache
+.ruff_cache
+*.log
+training
+tests
+pricing
+docs/*
+!docs/sample.jpg
+models/model.onnx
+models/*.pt
+.env
+.env.*

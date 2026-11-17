@@ -1,0 +1,155 @@
+{
+  "id": "f5d51d48-44ce-46c9-9ce8-69836b18d11d",
+  "created": "2026-11-17T04:40:09.528261+00:00",
+  "estimates": [
+    {
+      "repair": "Pieza ausente",
+      "part": "Paragolpes",
+      "cost_eur": 496.61,
+      "lower": 455.19,
+      "upper": 538.03,
+      "model_version": "20261115T222848_1f945185",
+      "synthetic": true
+    },
+    {
+      "repair": "Pieza rota",
+      "part": "Paragolpes",
+      "cost_eur": 444.75,
+      "lower": 407.66,
+      "upper": 481.84,
+      "model_version": "20261115T222848_1f945185",
+      "synthetic": true
+    },
+    {
+      "repair": "Abolladura",
+      "part": "Cap\u00f3",
+      "cost_eur": 272.43,
+      "lower": 249.71,
+      "upper": 295.15,
+      "model_version": "20261115T222848_1f945185",
+      "synthetic": true
+    }
+  ],
+  "vehicle": {
+    "brand": "Seat",
+    "model": "Ibiza",
+    "year": 2018,
+    "kilometers": 120000,
+    "region": "Almer\u00eda",
+    "engine": "Gasolina",
+    "parts_price_index": 1.0
+  },
+  "budget_note": "Las partidas disponibles son orientativas, con datos sint\u00e9ticos; no se suman autom\u00e1ticamente.",
+  "unpriced_groups": 0,
+  "model": "YOLO11s-seg \u00b7 da\u00f1os (8 clases, cobertura corregida) + piezas (21 clases)",
+  "expires_in_seconds": 900,
+  "privacy": "Las im\u00e1genes se procesan temporalmente en memoria. Los resultados caducan en unos 15 minutos.",
+  "limitations": "Una detecci\u00f3n no sustituye una revisi\u00f3n profesional. La estimaci\u00f3n utiliza un modelo entrenado con datos sint\u00e9ticos.",
+  "budget_available": true,
+  "images": [
+    {
+      "damages": [
+        {
+          "damage": "Missing part",
+          "name": "Pieza ausente",
+          "confidence": 0.5068,
+          "box": [
+            167.7,
+            432.9,
+            509.8,
+            483.8
+          ],
+          "part": "Paragolpes delantero",
+          "part_class": "Front-bumper",
+          "part_overlap": 1.0,
+          "severity": 2,
+          "area_fraction": 0.1361,
+          "repair": "Pieza ausente",
+          "repair_part": "Paragolpes",
+          "severity_method": "Heur\u00edstica por \u00e1rea segmentada; no mide profundidad ni da\u00f1o interno."
+        },
+        {
+          "damage": "Missing part",
+          "name": "Pieza ausente",
+          "confidence": 0.402,
+          "box": [
+            170.1,
+            275.9,
+            527.6,
+            359.2
+          ],
+          "part": "Paragolpes delantero",
+          "part_class": "Front-bumper",
+          "part_overlap": 0.758,
+          "severity": 2,
+          "area_fraction": 0.261,
+          "repair": "Pieza ausente",
+          "repair_part": "Paragolpes",
+          "severity_method": "Heur\u00edstica por \u00e1rea segmentada; no mide profundidad ni da\u00f1o interno."
+        },
+        {
+          "damage": "Broken part",
+          "name": "Pieza rota",
+          "confidence": 0.2775,
+          "box": [
+            21.9,
+            221.3,
+            613.5,
+            498.4
+          ],
+          "part": "Paragolpes delantero",
+          "part_class": "Front-bumper",
+          "part_overlap": 0.82,
+          "severity": 3,
+          "area_fraction": 1.0,
+          "repair": "Pieza rota",
+          "repair_part": "Paragolpes",
+          "severity_method": "Heur\u00edstica por \u00e1rea segmentada; no mide profundidad ni da\u00f1o interno."
+        },
+        {
+          "damage": "Missing part",
+          "name": "Pieza ausente",
+          "confidence": 0.2743,
+          "box": [
+            179.3,
+            394.2,
+            582.2,
+            481.9
+          ],
+          "part": "Paragolpes delantero",
+          "part_class": "Front-bumper",
+          "part_overlap": 1.0,
+          "severity": 2,
+          "area_fraction": 0.1906,
+          "repair": "Pieza ausente",
+          "repair_part": "Paragolpes",
+          "severity_method": "Heur\u00edstica por \u00e1rea segmentada; no mide profundidad ni da\u00f1o interno."
+        },
+        {
+          "damage": "Dent",
+          "name": "Abolladura",
+          "confidence": 0.267,
+          "box": [
+            449.2,
+            159.4,
+            493.8,
+            172.8
+          ],
+          "part": "Cap\u00f3",
+          "part_class": "Hood",
+          "part_overlap": 1.0,
+          "severity": 1,
+          "area_fraction": 0.0064,
+          "repair": "Abolladura",
+          "repair_part": "Cap\u00f3",
+          "severity_method": "Heur\u00edstica por \u00e1rea segmentada; no mide profundidad ni da\u00f1o interno."
+        }
+      ],
+      "inference_ms": 812.22,
+      "width": 734,
+      "height": 549
+    }
+  ],
+  "wall_seconds": 1.303,
+  "environment": "Docker CPU, 2 CPU limit, bundled pinned TallerMLOps through ASGI; Mac M2 Max"
+}

@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AutoPeritaje · Daños visibles</title>
+    <link rel="stylesheet" href="/static/app.css?v=1.0.0" />
+    <script src="/static/app.js?v=1.0.0" defer></script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/"
+        ><svg
+          width="25"
+          height="25"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+        >
+          <path
+            d="m4 10 2-5h12l2 5M3 10h18v8H3zM6 18v3m12-3v3M6 13h3m6 0h3"
+          /></svg
+        ><strong>AutoPeritaje</strong></a
+      ><span>Inspección visual asistida</span
+      ><span class="connection">Demostración · ONNX / CPU</span>
+    </header>
+    <aside>
+      <div class="workspace">
+        <strong>Evaluación de imágenes</strong
+        ><span>Daños, piezas e informe</span>
+      </div>
+      <nav>
+        <button class="active" data-view="analysis">▧ Nueva valoración</button
+        ><button data-view="model">▤ Modelo y resultados</button
+        ><button data-view="scope">ⓘ Alcance de la demo</button>
+      </nav>
+      <div class="side-bottom">
+        <span class="dot"></span> Procesamiento temporal
+        <p>
+          Las fotos y los informes se eliminan de la memoria en unos 15 minutos.
+        </p>
+        <a href="/docs">Consultar la API ↗</a>
+      </div>
+    </aside>
+    <main>
+      <div class="page-title">
+        <div>
+          <h1 id="page-heading">Nueva valoración</h1>
+          <p>
+            Localiza daños visibles y revisa cada detección antes de valorar la
+            reparación.
+          </p>
+        </div>
+        <a class="outline hidden" id="pdf" href="#">↓ Descargar informe PDF</a>
+      </div>
+      <div id="error" class="error hidden" role="alert"></div>
+      <section class="view" id="analysis">
+        <p class="model-notice">
+          Prototipo experimental · El modelo de daños omite muchos daños y puede
+          producir propuestas incorrectas. Revisa la fotografía; un resultado
+          vacío no acredita ausencia de daños.
+        </p>
+        <div class="analysis-layout">
+          <form id="upload-form" class="panel">
+            <h2>Fotografías del vehículo</h2>
+            <p class="muted">
+              De una a tres fotos, con buena luz y sin filtros.
+            </p>
+            <label class="dropzone" for="photos"
+              ><svg
+                width="34"
+                height="34"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.3"
+              >
+                <path d="M3 5h18v15H3zM3 16l5-6 5 6 3-3 5 6" />
+                <circle cx="16" cy="9" r="2" /></svg
+              ><strong>Seleccionar fotografías</strong
+              ><span>JPG, PNG o WebP · hasta 12 MB por foto</span
+              ><input
+                id="photos"
+                type="file"
+                accept="image/jpeg,image/png,image/webp"
+                multiple
+                aria-label="Seleccionar fotografías"
+            /></label>
+            <div id="file-list" class="file-list"></div>
+            <button type="button" id="sample" class="sample-button">
+              Usar una fotografía de ejemplo ↗
+            </button>
+            <div class="section-gap">
+              <h2>Vehículo de referencia</h2>
+              <p class="muted">
+                La foto no identifica la marca ni el modelo. Estos datos se usan
+                para la estimación orientativa.
+              </p>
+              <div class="form-grid">
+                <label>Marca<select id="brand" required></select></label
+                ><label
+                  >Modelo<select id="vehicle-model" required></select></label
+                ><label
+                  >Año<input
+                    id="year"
+                    type="number"
+                    value="2018"
+                    min="2004"
+                    max="2026"
+                    required /></label
+                ><label
+                  >Kilómetros<input
+                    id="kilometers"
+                    type="number"
+                    value="120000"
+                    min="0"
+                    max="600000"
+                    step="1000"
+                    required /></label
+                ><label>Motorización<select id="engine"></select></label
+                ><label>Provincia<select id="region"></select></label>
+              </div>
+            </div>
+            <details class="threshold">
+              <summary>Ajuste de detección</summary>
+              <label
+                >Confianza mínima <output id="confidence-value">25 %</output
+                ><input
+                  id="confidence"
+                  type="range"
+                  min="10"
+                  max="90"
+                  value="25"
+              /></label>
+              <p>
+                La confianza del modelo no equivale a certeza de que exista un
+                daño.
+              </p>
+            </details>
+            <button type="submit" class="primary analyze-button" id="analyze">
+              Analizar fotografías
+            </button>
+            <p class="scope">
+              Demo de portfolio. Los costes proceden de un modelo con datos
+              sintéticos.
+            </p>
+          </form>
+          <div class="results-column">
+            <article class="panel empty-state" id="empty">
+              <svg
+                width="54"
+                height="54"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+              >
+                <path d="M3 6h18v14H3zM8 6l2-3h4l2 3" />
+                <circle cx="12" cy="13" r="4" />
+              </svg>
+              <h2>Las imágenes aparecen aquí</h2>
+              <p>
+                Sube una foto o utiliza el ejemplo para comparar la imagen
+                original con la segmentación.
+              </p>
+              <span class="muted"
+                >Sin resultados simulados: se ejecuta el modelo al
+                analizar.</span
+              >
+            </article>
+            <div id="results" class="hidden">
+              <div class="result-status">
+                <span id="result-count"></span><span id="inference"></span>
+              </div>
+              <div id="image-results"></div>
+              <article class="panel">
+                <h2>Estimación de reparación</h2>
+                <p class="muted" id="vehicle-summary"></p>
+                <div id="estimates"></div>
+                <p class="scope" id="budget-note"></p>
+                <p class="scope">
+                  No se suman las partidas: distintos daños de una misma pieza
+                  pueden compartir trabajo. La gravedad se aproxima por el área
+                  visible y requiere revisión.
+                </p>
+              </article>
+              <p class="privacy" id="privacy"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="view hidden" id="model">
+        <article class="panel">
+          <h2>Detección de daños: resultado experimental</h2>
+          <p>
+            Se comparan dos modelos con las mismas particiones por huella de
+            imagen: 604 fotos para entrenamiento, 98 para validación y 112 para
+            prueba interna. Las fotos anotadas solo con piezas no se tratan como
+            coches sin daños.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Modelo</th>
+                  <th>mAP50 máscaras · validación</th>
+                  <th>mAP50 máscaras · prueba</th>
+                  <th>CPU · mediana</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>YOLO11n-seg</td>
+                  <td>12,63 %</td>
+                  <td>9,85 %</td>
+                  <td>77,22 ms</td>
+                </tr>
+                <tr>
+                  <td>YOLO11s-seg · elegido</td>
+                  <td>14,49 %</td>
+                  <td>9,20 %</td>
+                  <td>216,08 ms</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="scope">
+            El tamaño s se eligió por validación; en prueba resulta peor que n.
+            Son métricas de segmentación de ocho clases de daños, no porcentaje
+            de fotografías correctas. El rendimiento es bajo: las propuestas
+            deben revisarse y habrá daños que no se detecten.
+          </p>
+        </article>
+        <article class="panel">
+          <h2>Piezas: un modelo separado</h2>
+          <p>
+            El segundo experto localiza 21 tipos de piezas: mAP50 de máscaras
+            del 86,25 % sobre 133 imágenes internas de prueba. Su mediana de
+            inferencia CPU es de 226,60 ms. Sus predicciones de daños se
+            descartan.
+          </p>
+          <p class="scope">
+            La cifra de piezas no representa el rendimiento de detección de
+            daños. Ambos modelos se ejecutan en ONNX a 640 píxeles y dos hilos
+            CPU; las medidas anteriores son 12 ejecuciones del motor tras tres
+            de calentamiento en un Mac M2 Max. El tiempo de análisis incluye
+            además preprocesado y máscaras.
+          </p>
+          <h2>Cómo se interpretan las propuestas</h2>
+          <p>
+            El solapamiento entre máscaras propone la pieza afectada. Cuando no
+            es suficiente se muestra «Sin determinar». La gravedad es una regla
+            por área visible; no mide profundidad ni daños internos.
+          </p>
+          <p>
+            El conjunto público está declarado MIT por DrBimmer. Se agrupan
+            duplicados exactos antes de dividir. No hay coches limpios
+            verificados ni separación garantizada por vehículo; las pruebas son
+            internas y no acreditan uso profesional.
+          </p>
+        </article>
+      </section>
+      <section class="view hidden" id="scope">
+        <article class="panel readable">
+          <h2>Una ayuda para revisar la imagen</h2>
+          <p>
+            El modelo puede confundir reflejos, barro, sombras o elementos
+            ausentes, y omitir arañazos pequeños. Una foto sin detecciones no
+            acredita que el vehículo esté en buen estado.
+          </p>
+          <p>
+            La pieza se asigna por solapamiento de máscaras, no por una
+            reconstrucción del vehículo. Un panel interior o una pieza oculta no
+            pueden evaluarse.
+          </p>
+          <p>
+            Las estimaciones de TallerMLOps proceden de órdenes sintéticas. El
+            vehículo seleccionado es una referencia introducida por el usuario y
+            no una identificación extraída de la foto. No son presupuestos
+            comerciales ni una valoración profesional.
+          </p>
+          <h2>Tratamiento de las fotos</h2>
+          <p>
+            Se elimina la metadata al decodificar y volver a codificar la
+            imagen. No se guardan fotos en disco. Los resultados se mantienen
+            temporalmente en memoria para descargar el informe y caducan en unos
+            15 minutos. Evita subir documentación personal o imágenes cuya
+            publicación no hayas autorizado.
+          </p>
+        </article>
+      </section>
+      <footer>
+        <span>AutoPeritaje · Detecciones revisables</span
+        ><span>YOLO · ONNX Runtime · TallerMLOps</span>
+      </footer>
+    </main>
+  </body>
+</html>

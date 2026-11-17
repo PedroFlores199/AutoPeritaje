@@ -1,0 +1,45 @@
+{
+  "selection": "First distinct SHA-sorted internal-test image containing Dent, Scratch, Cracked and Flaking; not selected for visual success.",
+  "cases": [
+    {
+      "id": "03fcfe364795eb95aaa7dfc04c5ae7b5cd6496e07198428da9660fa1a28c9f03",
+      "split": "internal_test",
+      "threshold": 0.25,
+      "true_positive_mask_iou50": 0,
+      "unmatched_predictions": 1,
+      "unmatched_reference_masks": 22,
+      "inference_ms": 493.92,
+      "prepared_image_sha256": "6fb71a4d0b2343e146e5027268a833301b644372b7c8893c51011a05c0e5d29b"
+    },
+    {
+      "id": "0789781890e4487f0728f576e3dde503627eaeefa754baa7e33f79acb24f3629",
+      "split": "internal_test",
+      "threshold": 0.25,
+      "true_positive_mask_iou50": 3,
+      "unmatched_predictions": 1,
+      "unmatched_reference_masks": 6,
+      "inference_ms": 480.2,
+      "prepared_image_sha256": "ddb7cb5a5fa5483cfb96d0fd21fbc98c05ab1e4ee9d93b0d64324b9053e51f92"
+    },
+    {
+      "id": "20b79cfef994c1493b9a054fb42fd2ef40e0a5b867835674711ded37ad71132c",
+      "split": "internal_test",
+      "threshold": 0.25,
+      "true_positive_mask_iou50": 2,
+      "unmatched_predictions": 3,
+      "unmatched_reference_masks": 9,
+      "inference_ms": 441.67,
+      "prepared_image_sha256": "bd798b81c6a8024267852db5ed3bed90b3e5643523e9d71d9276ed2da999b755"
+    },
+    {
+      "id": "29ffe2022f0709490cccbe6df028e7859c3b73bf215f432131ae7e392d35be17",
+      "split": "internal_test",
+      "threshold": 0.25,
+      "true_positive_mask_iou50": 4,
+      "unmatched_predictions": 2,
+      "unmatched_reference_masks": 17,
+      "inference_ms": 433.52,
+      "prepared_image_sha256": "1febdc5730d9b133d534fc096e45f0f3d3902e7a3e6afcf38a4a0c0ad40dd62c"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "brands": {
+    "Seat": [
+      "Ibiza",
+      "León",
+      "Arona"
+    ],
+    "Toyota": [
+      "Yaris",
+      "Corolla",
+      "RAV4"
+    ],
+    "Renault": [
+      "Clio",
+      "Mégane",
+      "Captur"
+    ],
+    "Volkswagen": [
+      "Polo",
+      "Golf",
+      "Tiguan"
+    ],
+    "Ford": [
+      "Fiesta",
+      "Focus",
+      "Kuga"
+    ],
+    "Peugeot": [
+      "208",
+      "308",
+      "3008"
+    ],
+    "BMW": [
+      "Serie 1",
+      "Serie 3",
+      "X1"
+    ],
+    "Audi": [
+      "A1",
+      "A3",
+      "Q3"
+    ]
+  },
+  "regions": [
+    "Almería",
+    "Cádiz",
+    "Córdoba",
+    "Granada",
+    "Huelva",
+    "Jaén",
+    "Málaga",
+    "Sevilla"
+  ],
+  "engines": [
+    "Gasolina",
+    "Diésel",
+    "Híbrido"
+  ]
+}
