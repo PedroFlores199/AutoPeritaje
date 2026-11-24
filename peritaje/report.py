@@ -30,7 +30,7 @@ def build_report(case):
             name="SmallNote",
             fontSize=9,
             leading=13,
-            textColor=colors.HexColor("#65756b"),
+            textColor=colors.HexColor("#776663"),
         )
     )
     doc = SimpleDocTemplate(
@@ -89,8 +89,8 @@ def build_report(case):
             table.setStyle(
                 TableStyle(
                     [
-                        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#e4eee6")),
-                        ("GRID", (0, 0), (-1, -1), 0.3, colors.HexColor("#dce5de")),
+                        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#f0e4e2")),
+                        ("GRID", (0, 0), (-1, -1), 0.3, colors.HexColor("#e7dcda")),
                         ("VALIGN", (0, 0), (-1, -1), "TOP"),
                         ("TOPPADDING", (0, 0), (-1, -1), 5),
                         ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
@@ -151,7 +151,7 @@ def build_report(case):
 
     def footer(canvas, document):
         canvas.setFont("Helvetica", 8)
-        canvas.setFillColor(colors.HexColor("#65756b"))
+        canvas.setFillColor(colors.HexColor("#776663"))
         canvas.drawString(38, 22, "AutoPeritaje · Informe orientativo")
         canvas.drawRightString(A4[0] - 38, 22, str(document.page))
 
